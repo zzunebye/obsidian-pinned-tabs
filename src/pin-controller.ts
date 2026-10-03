@@ -111,6 +111,6 @@ export class PinController {
   private showCompatibilityNotice(): void {
     if (this.compatibilityNoticeShown) return;
     this.compatibilityNoticeShown = true;
-    new Notice("Pin tabs left could not safely reorder this tab group.");
+    new Notice("Pinned Tabs could not safely reorder this tab group.");
   }
 }

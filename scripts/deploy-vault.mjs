@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 const projectRoot = fileURLToPath(new URL("../", import.meta.url));
 
 export async function deployToVault(
-  outputDirectory = path.join(projectRoot, "dist", "pin-tabs-left"),
+  outputDirectory = path.join(projectRoot, "dist", "pinned-tabs"),
 ) {
   let vault = process.env.OBSIDIAN_VAULT_PATH;
   if (!vault) {
@@ -24,7 +24,7 @@ export async function deployToVault(
   }
   if (!vault) return false;
   if (!path.isAbsolute(vault)) throw new Error("OBSIDIAN_VAULT_PATH must be an absolute path.");
-  const destination = path.join(vault, ".obsidian", "plugins", "pin-tabs-left");
+  const destination = path.join(vault, ".obsidian", "plugins", "pinned-tabs");
   const output = path.resolve(projectRoot, outputDirectory);
   const pluginFolder = path.join(vault, ".obsidian", "plugins");
 

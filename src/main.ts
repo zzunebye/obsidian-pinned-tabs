@@ -2,7 +2,7 @@ import { Plugin } from "obsidian";
 
 import { PinController } from "./pin-controller";
 
-export default class PinTabsLeftPlugin extends Plugin {
+export default class PinnedTabsPlugin extends Plugin {
   private pinController: PinController | undefined;
 
   override onload(): void {

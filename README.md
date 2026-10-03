@@ -1,6 +1,6 @@
-# Pin Tabs Left
+# Pinned Tabs
 
-Keep pinned Markdown tabs at the left of each tab group in Obsidian Desktop.
+Keep pinned tabs at the left of each tab group in Obsidian Desktop.
 Use Obsidian's native **Pin** action; no extra buttons or settings are required.
 
 ## Behavior
@@ -18,7 +18,7 @@ Unpin tab3: tab2 [pin] tab3       tab1       tab4
 - Sidebar tabs are excluded.
 - Sorting also runs when the layout is restored or tabs are moved.
 - Existing tabs are moved in place without closing their views.
-- Run **Pin Tabs Left: Unpin all tabs in current group** from the command palette to clear the current group's pins while keeping its order. It is available only when the current group contains pinned tabs. Assign a shortcut in **Settings → Hotkeys** if desired.
+- Run **Pinned Tabs: Unpin all tabs in current group** from the command palette to clear the current group's pins while keeping its order. It is available only when the current group contains pinned tabs. Assign a shortcut in **Settings → Hotkeys** if desired.
 
 ## Installation
 
@@ -26,10 +26,10 @@ This plugin has not yet been published to the community directory.
 For a manual installation:
 
 1. Download `main.js` and `manifest.json` from a published GitHub release.
-2. Create `<vault>/.obsidian/plugins/pin-tabs-left/` and put both files directly inside it.
-3. Reload Obsidian and enable **Pin Tabs Left** in **Settings → Community plugins**.
+2. Create `<vault>/.obsidian/plugins/pinned-tabs/` and put both files directly inside it.
+3. Reload Obsidian and enable **Pinned Tabs** in **Settings → Community plugins**.
 
-To install from source, build the project and copy the two files from `dist/pin-tabs-left/` instead.
+To install from source, build the project and copy the two files from `dist/pinned-tabs/` instead.
 No `styles.css` file is required.
 
 ## Compatibility

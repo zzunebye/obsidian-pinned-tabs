@@ -4,7 +4,7 @@ Checked on 2026-10-02.
 
 ## Completed
 
-- Manifest ID changed to `pin-tabs-left` to comply with the current naming requirements.
+- The display name is `Pinned Tabs`; the plugin ID and install folder are `pinned-tabs`. The suggested repository name is `obsidian-pinned-tabs`.
 - English README covers behavior, manual installation, privacy, compatibility, and development.
 - 0BSD license metadata and sample tooling attribution are present.
 - Production builds require no local vault and contain no local filesystem paths.
@@ -29,6 +29,6 @@ Obsidian 1.14.3 on macOS was observed running the Software World vault. Two atte
 
 ## Local migration
 
-The Software World vault now contains `.obsidian/plugins/pin-tabs-left/`, and its enabled-plugin file references the new ID. The previous development build was moved to `.obsidian/plugin-backups/obsidian-pin-tabs-0.1.0/`. Restart Obsidian to load the new ID. Existing custom hotkeys that reference the old ID need reassignment.
+The Software World vault still uses earlier IDs. Move `pin-tabs-left` to `.obsidian/plugin-backups/pin-tabs-left-0.1.0/`, copy the new `pinned-tabs` build, and replace the old IDs in the enabled-plugin list. Restart Obsidian to load it. Existing custom hotkeys using an old ID need reassignment.
 
 No public repository, Git commit, pushed tag, GitHub release, or community submission was created in this preparation step.

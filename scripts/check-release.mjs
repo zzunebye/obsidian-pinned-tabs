@@ -6,6 +6,8 @@ const packageJson = JSON.parse(await readFile("package.json", "utf8"));
 const versions = JSON.parse(await readFile("versions.json", "utf8"));
 assert.match(manifest.id, /^[a-z]+(?:-[a-z]+)*$/);
 assert.ok(!manifest.id.includes("obsidian") && !manifest.id.endsWith("plugin"));
+assert.equal(manifest.id, "pinned-tabs");
+assert.equal(manifest.name, "Pinned Tabs");
 assert.match(manifest.version, /^\d+\.\d+\.\d+$/);
 assert.equal(packageJson.version, manifest.version);
 assert.equal(versions[manifest.version], manifest.minAppVersion);

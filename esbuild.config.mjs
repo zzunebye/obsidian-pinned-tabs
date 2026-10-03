@@ -4,7 +4,7 @@ import { copyFile, mkdir } from "node:fs/promises";
 import { deployToVault } from "./scripts/deploy-vault.mjs";
 
 const production = process.argv[2] === "production";
-const outputDirectory = "dist/pin-tabs-left";
+const outputDirectory = "dist/pinned-tabs";
 await mkdir(outputDirectory, { recursive: true });
 
 const context = await esbuild.context({

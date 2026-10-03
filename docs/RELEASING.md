@@ -11,7 +11,7 @@ npm run check:release
 ```
 
 The build must succeed without a local vault or `vault.config.json`.
-The plugin ID and installation folder are `pin-tabs-left`. Earlier development builds used `obsidian-pin-tabs`; disable that build before enabling the new ID. Custom hotkeys using the old ID must be assigned again.
+The repository is named `obsidian-pinned-tabs`; the plugin display name is `Pinned Tabs`, and the manifest ID and installation folder are `pinned-tabs`. Earlier builds used `obsidian-pin-tabs` and `pin-tabs-left`; disable those builds before enabling the new ID. Custom hotkeys using either old ID must be reassigned.
 
 ## Manual acceptance
 
@@ -35,7 +35,7 @@ Automated tests simulate the narrow workspace API needed by the plugin. They do 
 1. Confirm a public GitHub repository, author identity, and that the plugin name and ID are available in the current community directory.
 2. Commit the source, manifest, version mapping, README, license, tests, and workflows. Keep local vault config and generated files untracked.
 3. Keep `package.json`, `manifest.json`, and `versions.json` aligned. For later versions, `npm version patch` runs the version helper and creates a local version commit/tag; use it only when that Git action is intended. The first release is `0.1.0`.
-4. Push a tag matching the manifest version exactly, without a `v` prefix. The release workflow validates the tag and creates a **draft** GitHub release with `main.js` and `manifest.json` from `dist/pin-tabs-left/`.
+4. Push a tag matching the manifest version exactly, without a `v` prefix. The release workflow validates the tag and creates a **draft** GitHub release with `main.js` and `manifest.json` from `dist/pinned-tabs/`.
 5. Review the release notes, assets, and manual QA evidence, then publish the draft.
 6. Follow the current official submission process: https://docs.obsidian.md/Plugins/Releasing/Submit+your+plugin . A local build or draft release is not community-directory approval.
 

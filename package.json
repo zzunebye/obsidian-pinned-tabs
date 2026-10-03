@@ -1,9 +1,9 @@
 {
-  "name": "obsidian-pin-tabs",
+  "name": "obsidian-pinned-tabs",
   "version": "0.1.0",
-  "description": "Keep pinned tabs on the left in Obsidian Desktop.",
+  "description": "Keep pinned tabs organized in each Obsidian Desktop tab group.",
   "private": true,
-  "main": "dist/pin-tabs-left/main.js",
+  "main": "dist/pinned-tabs/main.js",
   "type": "module",
   "scripts": {
     "dev": "node esbuild.config.mjs",

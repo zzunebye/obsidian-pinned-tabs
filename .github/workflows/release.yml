@@ -39,4 +39,4 @@ jobs:
                   gh release create "$RELEASE_TAG" \
                     --verify-tag --title="$RELEASE_TAG" \
                     --draft --generate-notes \
-                    dist/pin-tabs-left/main.js dist/pin-tabs-left/manifest.json
+                    dist/pinned-tabs/main.js dist/pinned-tabs/manifest.json
