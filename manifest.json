@@ -1,0 +1,9 @@
+{
+  "id": "pin-tabs-left",
+  "name": "Pin Tabs Left",
+  "version": "0.1.0",
+  "minAppVersion": "1.14.3",
+  "description": "Keep pinned Markdown tabs on the left in each tab group.",
+  "author": "June",
+  "isDesktopOnly": true
+}

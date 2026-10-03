@@ -1,0 +1,42 @@
+name: Release plugin
+
+on:
+    push:
+        tags:
+            - '*'
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        permissions:
+            contents: write
+        steps:
+            - uses: actions/checkout@v6
+
+            - name: Use Node.js
+              uses: actions/setup-node@v6
+              with:
+                  node-version: 24
+                  cache: 'npm'
+
+            - name: Build plugin
+              run: |
+                  npm ci
+                  npm test
+                  npm run lint
+                  npm run build
+
+            - name: Validate release artifacts and tag
+              run: npm run check:release
+              env:
+                  RELEASE_TAG: ${{ github.ref_name }}
+
+            - name: Create release
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                  RELEASE_TAG: ${{ github.ref_name }}
+              run: |
+                  gh release create "$RELEASE_TAG" \
+                    --verify-tag --title="$RELEASE_TAG" \
+                    --draft --generate-notes \
+                    dist/pin-tabs-left/main.js dist/pin-tabs-left/manifest.json

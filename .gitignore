@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.tsbuildinfo
+.vscode/
+.idea/
+.DS_Store
+data.json
+*.map
+vault.config.json

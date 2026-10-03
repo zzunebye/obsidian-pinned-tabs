@@ -1,0 +1,23 @@
+import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
+
+const manifest = JSON.parse(await readFile("manifest.json", "utf8"));
+const packageJson = JSON.parse(await readFile("package.json", "utf8"));
+const versions = JSON.parse(await readFile("versions.json", "utf8"));
+assert.match(manifest.id, /^[a-z]+(?:-[a-z]+)*$/);
+assert.ok(!manifest.id.includes("obsidian") && !manifest.id.endsWith("plugin"));
+assert.match(manifest.version, /^\d+\.\d+\.\d+$/);
+assert.equal(packageJson.version, manifest.version);
+assert.equal(versions[manifest.version], manifest.minAppVersion);
+assert.ok(manifest.name.length > 0 && manifest.author.length > 0);
+assert.ok(manifest.description.length <= 250 && manifest.description.endsWith("."));
+assert.equal(manifest.isDesktopOnly, true);
+if (process.env.RELEASE_TAG) assert.equal(process.env.RELEASE_TAG, manifest.version);
+const output = `dist/${manifest.id}`;
+assert.deepEqual(JSON.parse(await readFile(`${output}/manifest.json`, "utf8")), manifest);
+const bundle = await readFile(`${output}/main.js`, "utf8");
+assert.ok(bundle.length > 0);
+assert.ok(!bundle.includes("/Users/") && !bundle.includes("Software World"));
+await readFile("LICENSE", "utf8");
+await readFile("README.md", "utf8");
+console.log(`Release artifacts verified: ${output}/main.js and manifest.json (${manifest.version}).`);
